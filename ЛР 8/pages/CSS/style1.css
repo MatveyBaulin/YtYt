@@ -1,0 +1,288 @@
+body {
+            display: grid;
+            place-items: center;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        main > * {
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box; 
+            display: flex; 
+            flex-direction: column; 
+        }
+
+        
+        main > * > * { 
+            margin-top: 0; 
+        }
+
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: small;
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+
+        p {
+            color: darkblue;
+            font-family: "Oswald", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            margin: 10px 0;
+        }
+
+        a:hover {
+            color: green;
+            text-decoration-color: red;
+        }
+
+        .media-section {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table td {
+            padding: 10px;
+            border: 1px solid #000;
+            text-align: center;
+            
+        }
+
+        form {
+            border: 2px solid black;
+            background-color: darkgrey;
+            padding: 20px;
+            max-width: 500px;
+            margin: 20px 0;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-gap: 10px;
+        }
+
+        form h1,
+        form label,
+        form input {
+            margin: 0;
+        }
+
+        form h1 {
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+
+        form label {
+            text-align: right;
+        }
+
+        form input[type="submit"] {
+            grid-column: 1 / -1;
+            justify-self: center;
+            width: auto;
+            padding: 10px 20px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        figure {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        figure img {
+            border-radius: 25px;
+            border: 2px solid #000;
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        figure figcaption {
+            text-align: center;
+        }
+      /* Микросетка 1 */
+      .form-container {
+      font-family: Arial, sans-serif;
+      background: #dbdada;
+      padding: 30px;
+      border-radius: 8px;
+      width: 100%;
+      height: auto;
+      display: grid;
+      gap: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+    }
+
+    .form-group {
+      display: grid;
+      gap: 5px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-group .required {
+      color: red;
+    }
+
+    .submit-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px;
+      border: none;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: fit-content;
+      justify-self: start;
+    }
+
+    .submit-btn:hover {
+      background-color: #45a049;
+    }
+
+    ::placeholder {
+      color: #888;
+    }
+    /* Микросетка 2 */
+    .product-grid {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      max-width: 1000px;
+      width: 100%;
+      align-items: start;
+    }
+
+    .product-image img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .product-details {
+      display: grid;
+      gap: 15px;
+    }
+
+    .product-details h2 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    .in-stock {
+      color: green;
+    }
+
+    .sizes {
+      display: flex;
+      gap: 10px;
+    }
+
+    .sizes button {
+      padding: 5px 12px;
+      border: 1px solid #ccc;
+      background: #fff;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .sizes button:hover {
+      background-color: #eee;
+    }
+
+    .dimensions {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    .description {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .old-price {
+      font-size: 18px;
+      color: #999;
+      text-decoration: line-through;
+      margin-left: 10px;
+    }
+
+    .order-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .order-section input[type="number"] {
+      width: 50px;
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    .order-btn {
+      padding: 10px 20px;
+      background-color: #ff7f66;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .order-btn:hover {
+      background-color: #e76b55;
+    }

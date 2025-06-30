@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Весенний букет</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .product-grid {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      max-width: 1000px;
+      width: 100%;
+      align-items: start;
+    }
+
+    .product-image img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .product-details {
+      display: grid;
+      gap: 15px;
+    }
+
+    .product-details h2 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    .in-stock {
+      color: green;
+    }
+
+    .sizes {
+      display: flex;
+      gap: 10px;
+    }
+
+    .sizes button {
+      padding: 5px 12px;
+      border: 1px solid #ccc;
+      background: #fff;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .sizes button:hover {
+      background-color: #eee;
+    }
+
+    .dimensions {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    .description {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .old-price {
+      font-size: 18px;
+      color: #999;
+      text-decoration: line-through;
+      margin-left: 10px;
+    }
+
+    .order-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .order-section input[type="number"] {
+      width: 50px;
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    .order-btn {
+      padding: 10px 20px;
+      background-color: #ff7f66;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .order-btn:hover {
+      background-color: #e76b55;
+    }  
+  </style>
+</head>
+<body>
+
+  <div class="product-grid">
+    <div class="product-image">
+      <img src="./pages/image/Букет.JPG" alt="Весенний букет">
+    </div>
+
+    <div class="product-details">
+      <h2>Весенний букет</h2>
+      <div>Артикул 1128 — <span class="in-stock">✓ Есть в наличии</span></div>
+
+      <div>
+        <strong>Размеры:</strong>
+        <div class="sizes">
+          <button>XS</button>
+          <button>S</button>
+          <button>M</button>
+          <button>L</button>
+          <button>XL</button>
+        </div>
+      </div>
+
+      <div class="dimensions">
+        <img src="./pages/image/схема1.JPG">
+        <div>Высота<br><strong>30 см</strong></div>
+        <img src="./pages/image/схема2.JPG">
+        <div>Диаметр<br><strong>20 см</strong></div>
+      </div>
+
+      <div class="description">
+        <strong>Описание:</strong><br>
+        9 шт. жёлтых тюльпанов<br>
+        7 шт. ирисов<br>
+        3 шт. белых фрезий<br>
+        3 шт. роз "Пиони лейк"<br>
+        6 шт. листьев спатифиллума широкого
+      </div>
+
+      <div>
+        <span class="price">1010 грн</span>
+        <span class="old-price">1250 грн</span>
+      </div>
+
+      <div class="order-section">
+        <input type="number" min="1" value="1">
+        <button class="order-btn">ЗАКАЗАТЬ</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

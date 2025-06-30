@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Обратная связь</title>
+  <style>
+    body {
+      background: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .form-container {
+      font-family: Arial, sans-serif;
+      background: #dbdada;
+      padding: 30px;
+      border-radius: 8px;
+      max-width: 500px;
+      width: 100%;
+      display: grid;
+      gap: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+    }
+
+    .form-group {
+      display: grid;
+      gap: 5px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-group .required {
+      color: red;
+    }
+
+    .submit-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px;
+      border: none;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: fit-content;
+      justify-self: start;
+    }
+
+    .submit-btn:hover {
+      background-color: #45a049;
+    }
+
+    ::placeholder {
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <form class="form-container">
+    <h2>Обратная связь</h2>
+
+    <div class="form-group">
+      <label>Ваш эл. адрес <span class="required">*</span></label>
+      <input type="email" placeholder="Введите эл. адрес на который мы пришлем ответ" required>
+    </div>
+
+    <div class="form-group">
+      <label>Ваше имя</label>
+      <input type="text" placeholder="Введите ваше имя">
+    </div>
+
+    <div class="form-group">
+      <label>Текст сообщения <span class="required">*</span></label>
+      <textarea placeholder="Оставьте свое сообщение для администрации" required></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Отправить сообщение</button>
+  </form>
+
+</body>
+</html>
