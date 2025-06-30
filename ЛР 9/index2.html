@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Оператор if/else</title>
+</head>
+<body>
+    <!--Условный оператор(if/else)-->
+    <input type="number" id="ageInput" placeholder="Введите ваш возраст">
+    <button onclick="checkAge()">Проверить возраст</button>
+    <p id="result"></p>
+    <script>
+        function checkAge() {
+            let age = document.getElementById("ageInput").value;
+            let message = "";
+
+            if (age >= 18) {
+                message = "Вы совершеннолетний.";
+            } else {
+                message = "Вы несовершеннолетний.";
+            }
+
+            document.getElementById("result").textContent = message;
+        }
+    </script>
+    <!--Оператор множественного выбора-->
+    <input type="number" id="dayInput" placeholder="Введите номер дня недели (1-7)">
+    <button onclick="getDayName()">Определить день недели</button>
+    <p id="dayName"></p>
+    <script>
+        function getDayName() {
+            let day = document.getElementById("dayInput").value;
+            let dayName = "";
+
+            switch (parseInt(day)) {
+                case 1:
+                    dayName = "Понедельник";
+                    break;
+                case 2:
+                    dayName = "Вторник";
+                    break;
+                case 3:
+                    dayName = "Среда";
+                    break;
+                case 4:
+                    dayName = "Четверг";
+                    break;
+                case 5:
+                    dayName = "Пятница";
+                    break;
+                case 6:
+                    dayName = "Суббота";
+                    break;
+                case 7:
+                    dayName = "Воскресенье";
+                    break;
+                default:
+                    dayName = "Некорректный ввод";
+            }
+
+            document.getElementById("dayName").textContent = dayName;
+        }
+    </script>
+    <!--Цикл for-->
+    <ul id="numbers"></ul>
+    <script>
+        let l = document.getElementById("numbers");
+
+        for (let i = 1; i <= 5; i++) {
+            let listItem = document.createElement("li");
+            listItem.textContent = "Число: " + i;
+            l.appendChild(listItem);
+        }
+    </script>
+<!--Цикл while-->
+    <ul id="numbers2"></ul>
+    <script>
+        let ll = document.getElementById("numbers2");
+        let j = 1;
+
+        while (j <= 5) {
+            let listItem = document.createElement("li");
+            listItem.textContent = "Число: " + j;
+            ll.appendChild(listItem);
+            j++;
+        }
+    </script>
+<!--Цикл do while-->
+    <ul id="numbers3"></ul>
+    <script>
+        let lll = document.getElementById("numbers3");
+        let f = 1;
+
+        do {
+            let listItem = document.createElement("li");
+            listItem.textContent = "Число: " + f;
+            lll.appendChild(listItem);
+            f++;
+        } while (f <= 5);
+    </script>
+<!--Оператор break-->
+<p id="result"></p>
+<script>
+let result = "";
+    for (let i = 1; i <= 10; i++) {
+        if (i === 6) {
+            break; // Останавливаем цикл, когда i равно 6
+        }
+        result += i + " ";
+    }
+    document.getElementById("result").textContent = result; // Выводит 1 2 3 4 5
+</script>
+<!--Оператор continue-->
+<p id="r"></p>
+    <script>
+        let r = "";
+        for (let i = 1; i <= 10; i++) {
+            if (i % 2 === 0) {
+                continue; // Пропускаем четные числа
+            }
+            r += i + " ";
+        }
+        document.getElementById("r").textContent = r; // Выводит 1 3 5 7 9
+    </script>
+<!--Оператор return-->
+<input type="number" id="num1" placeholder="Введите первое число">
+<input type="number" id="num2" placeholder="Введите второе число">
+<button onclick="calculateSum()">Посчитать сумму</button>
+<p id="sum"></p>
+<script>
+    function calculateSum() {
+        let a = parseInt(document.getElementById("num1").value);
+        let b = parseInt(document.getElementById("num2").value);
+
+        function add(x, y) {
+            return x + y; // Возвращает сумму
+        }
+
+        let sum = add(a, b);
+        document.getElementById("sum").textContent = "Сумма: " + sum;
+    }
+</script>
+</body>
+</html>
