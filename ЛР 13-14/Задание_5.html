@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Валидация формы</title>
+    <style>
+        /* Стили для подсказок */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Стили для невалидных полей */
+        input:invalid {
+            border: 2px solid red;
+        }
+
+        input:valid {
+            border: 2px solid green;
+        }
+
+        label {
+            display: block; /* Чтобы label занимал всю ширину и input был под ним */
+            margin-bottom: 5px; /* Отступ между label и input */
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%; /* Занимают всю ширину контейнера */
+            padding: 8px;
+            margin-bottom: 10px; /* Отступ между input */
+            box-sizing: border-box; /* Чтобы padding не увеличивал общую ширину */
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        form {
+            width: 300px;
+            margin: 20px auto; /* Центрируем форму */
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="myForm" onsubmit="return validateForm()">
+        <h1>Представьтесь</h1>
+        <div class="tooltip">
+            <label for="email">Ваш адрес электронной почты</label>
+            <input type="email" id="email" name="email" required maxlength="100">
+            <span class="tooltiptext">Пожалуйста, введите корректный email.</span>
+        </div>
+        <div class="tooltip">
+            <label for="password">Ваш пароль</label>
+            <input type="password" id="password" name="password" required minlength="8" maxlength="50">
+            <span class="tooltiptext">Пожалуйста, введите пароль длиной не менее 8 символов.</span>
+        </div>
+        <input type="submit" value="Продолжить">
+    </form>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+
+            // Сброс стилей и подсказок
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.classList.remove('invalid');
+                const tooltip = input.parentNode.querySelector('.tooltiptext');
+                if (tooltip) {
+                    tooltip.style.visibility = 'hidden';
+                }
+            });
+
+            // Проверка email
+            const emailField = document.getElementById('email');
+            if (emailField && !emailField.checkValidity()) {
+                isValid = false;
+                emailField.classList.add('invalid');
+                const tooltip = emailField.parentNode.querySelector('.tooltiptext');
+                if (tooltip) {
+                    tooltip.style.visibility = 'visible';
+                }
+            }
+
+            // Проверка password
+            const passwordField = document.getElementById('password');
+            if (passwordField && !passwordField.checkValidity()) {
+                isValid = false;
+                passwordField.classList.add('invalid');
+                const tooltip = passwordField.parentNode.querySelector('.tooltiptext');
+                if (tooltip) {
+                    tooltip.style.visibility = 'visible';
+                }
+            }
+
+            if (!isValid) {
+                event.preventDefault();
+            }
+
+            return isValid;
+        }
+    </script>
+
+</body>
+</html>

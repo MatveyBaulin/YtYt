@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Задание_4</title>
+    </head>
+<body>
+    <div id="output"></div> <!--Контейнер для вывода-->
+    <script>
+        // Функция для получения информации об информационной системе
+       function getSystemInfo() {
+          const systemInfo = {
+             userAgent: navigator.userAgent,
+             platform: navigator.platform,
+             language: navigator.language,
+             cookieEnabled: navigator.cookieEnabled,
+             javaEnabled: navigator.javaEnabled(), // Обратите внимание на скобки!
+             screenResolution: `${screen.width}x${screen.height}`,
+             colorDepth: screen.colorDepth,
+    // Дополнительные свойства можно добавить сюда
+           };
+        return systemInfo;
+        }
+    // Функция для отображения информации в новом окне
+    function displaySystemInfoInNewWindow() {
+       const systemInfo = getSystemInfo();
+       // Создаем новое окно
+       const newWindow = window.open("", "_blank", "width=500,height=400");
+       if (newWindow) {
+          // Создаем контент для нового окна
+          let content = "<h1>Информация об информационной системе</h1><ul>";
+          for (const key in systemInfo) {
+            if (systemInfo.hasOwnProperty(key)) {
+            content += `<li><strong>${key}:</strong> ${systemInfo[key]}</li>`;
+            }
+            }
+        content += "</ul>";
+    // Записываем контент в новое окно
+    newWindow.document.body.innerHTML = content;
+    // Закрываем окно через 4 секунды
+    setTimeout(() => {
+      newWindow.close();
+    }, 4000);
+       } else {
+       alert("Не удалось открыть новое окно.  Возможно, блокировщик всплывающих окон.");
+       }
+    }
+    // Вызываем функцию для отображения информации
+    displaySystemInfoInNewWindow();
+</script>
+</body>
+</html>
