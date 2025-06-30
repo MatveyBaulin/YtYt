@@ -1,0 +1,146 @@
+body {
+            display: grid;
+            place-items: center;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
+            border: #000 5px;
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: small;
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+
+        p {
+            color: darkblue;
+            font-family: "Oswald", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            margin: 10px 0;
+        }
+
+        a:hover {
+            color: green;
+            text-decoration-color: red;
+        }
+
+        .media-section {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table td {
+            padding: 10px;
+            border: 1px solid #000;
+            text-align: center;
+        }
+
+        form {
+            border: 2px solid black;
+            background-color: darkgrey;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 500px;
+            margin: 20px 0;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        figure {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        figure img {
+            border-radius: 25px;
+            border: 2px solid #000;
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        figure figcaption {
+            text-align: center;
+        }
+
+        /* Медиа-запросы для адаптивности */
+
+        /* Для маленьких экранов (максимальная ширина 576px) */
+        @media (max-width: 576px) {
+            main {
+                grid-template-columns: 1fr; /* Одна колонка */
+                grid-gap: 10px; /* Уменьшаем отступ */
+            }
+
+            h1 {
+                font-size: 1.2em; /* Немного увеличиваем размер шрифта */
+            }
+
+            form {
+                padding: 10px; /* Уменьшаем отступы формы */
+            }
+
+            .links {
+                gap: 5px; /* Уменьшаем отступ между ссылками */
+            }
+
+            table td {
+                padding: 5px; /* Уменьшаем отступы в таблице */
+                font-size: 0.8em; /* Уменьшаем размер шрифта в таблице */
+            }
+
+            /* Можно добавить стили для конкретных элементов, если нужно */
+        }
+
+        /* Для средних экранов (максимальная ширина 768px) */
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Чуть уже колонки */
+            }
+
+            h1 {
+                font-size: 1.3em;
+            }
+        }
+
+        /* Для больших экранов (максимальная ширина 992px) */
+        @media (max-width: 992px) {
+            main {
+                grid-gap: 15px; /* Уменьшаем отступы */
+            }
+        }
+
+        /* Для очень больших экранов (минимальная ширина 1200px) */
+        @media (min-width: 1200px) {
+            main {
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Увеличиваем минимальную ширину колонки */
+            }
+        }
