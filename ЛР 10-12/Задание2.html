@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Задание_2</title>
+    </head>
+<body>
+    <div id="output"></div> <!--Контейнер для вывода текста-->
+    <script>
+          let n = 2; // Значение n по варианту
+          let FN = "Матвей"; // Имя
+          let LN = "Баулин"; // Фамилия
+          let i = 0; // Начальный индекс для цикла
+          let outputDiv = document.getElementById("output") // Привязываем контейнер для вывода текста
+          // Создаём цикл while
+          while(i<(n+5)) {
+            outputDiv.innerHTML += LN + " " + FN + "<br>"; // Выводим нужный текст с переходом на новую строку
+            i++; // Увеличиваем индекс
+          }
+    </script>
+</body>
+</html>

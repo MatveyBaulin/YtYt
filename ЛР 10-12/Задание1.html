@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Задание_1</title>
+        <!--Создаём скрипт для определения даты-->
+        <script>
+            function DateMonth() {
+                let CurrentDate = new Date(); // Создаём переменную типа Дата
+                let month = CurrentDate.getMonth() + 1; // Добавляем 1, т.к. отсчёт начинается с 0
+                alert("Текущий месяц: " + month) // Вывод сообщения о текущей дате
+            }
+        </script>
+    </head>
+<body>
+    <button onclick="DateMonth()">Показать текущий месяц</button> <!--Добавляем кнопку для вывода текста о текущем месяце-->
+</body>
+</html>

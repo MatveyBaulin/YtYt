@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Задание_4</title>
+    </head>
+<body>
+   <label for="xValue">Введите значение x</label>
+   <input type="number" id="xValue">
+   <button onclick="Calculation()">Рассчитать</button>
+   <div id="result"></div>
+   <script>
+    function calculateY(x) {
+        try { // Создаём обработчик событий при некорректном вводе
+        let z = 4 - (x*x); // Создаём переменную выражения под корнем
+        // Проверка на отрицательность
+        if(z<0){
+            throw new Error("Ошибка: Корень отрицательного числа"); // Вывод ошибки
+        }
+        let y = Math.sqrt(z); // Создаём переменную основной функции
+        return y; // Выводим результат функции при помощи return
+    } catch (error){
+        alert("Ошибка: " + error.Message); // Вывод ошибки
+        return null; // Вывод пустого значения при ошибке
+    }
+}
+        function Calculation(){
+            let x = parseFloat(document.getElementById("xValue").value); // Присваиваем значение из поля ввода
+            let y = calculateY(x);
+            // Проверка на наличие ошибки и вывод сообщения
+            if(y!==null){
+                document.getElementById("result").textContent = "Результат(y): " + y;
+            } else{
+                document.getElementById("result").textContent = "Расчёт не выполнен из-за ошибки.";
+            }
+        }
+   </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Задание_3</title>
+    </head>
+<body>
+    <div id="output"></div> <!--Контейнер для вывода-->
+    <script>
+        let MyArray = [3, 36, 10, 39, 100, 1, 92]; // Массив из 7 целых чисел
+        let outputDiv = document.getElementById("output"); // Привязываем контейнер для вывода текста
+        outputDiv.innerHTML += "Исходный массив: " + MyArray.join(", ") + "<br>"; // Вывод исходного массива
+        let maxElement = MyArray[0]; // Начальное значение  максимального элемента
+         // Создаём цикл for для определения максимального элемента массива
+        for(let i=1; i < MyArray.length; i++) {
+            if(MyArray[i] > maxElement) {
+                maxElement = MyArray[i];
+            }
+        }
+        outputDiv.innerHTML += "Максимальный элемент массива: " + maxElement + "<br>"; // Вывод максимального элемента массива
+        // Переставляем первый и последний элемент местами
+        let a = MyArray[0];
+        MyArray[0] = MyArray[MyArray.length - 1];
+        MyArray[MyArray.length -1] = a;
+        outputDiv.innerHTML += "Изменённый массив: " + MyArray.join(", ") + "<br>"; // Вывод изменённого массива
+    </script>
+</body>
+</html>
