@@ -13,8 +13,56 @@
       font-family: 'Gilroy';
       src: url('./pages/fonts/Gilroy-Light.otf') format('opentype');
       font-weight: 300;
-      font-style: normal;
+      font-style: normal;}
+    #pointerArea {
+      width: 200px;
+      height: 200px;
+      background-color: lightcoral;
+      text-align: center;
+      line-height: 200px;
+      margin: 20px;
+      user-select: none; /* Запрещает выделение текста */
     }
+     #scrollableArea {
+      width: 300px;
+      height: 200px;
+      border: 1px solid black;
+      overflow: auto; /* Важно: добавляет полосу прокрутки, когда контент выходит за пределы */
+      padding: 10px;
+      margin: 20px;
+    }
+     #content {
+      height: 500px; /* Делаем контент больше контейнера, чтобы появилась полоса прокрутки */
+      background-color: lightblue;
+    }
+
+    #log {
+      margin: 20px;
+    }
+    .error {
+      color: red;}
+    #drag-container {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed #aaa;
+    margin: 20px;
+    text-align: center;
+    line-height: 200px;
+  }
+  #draggable {
+    width: 100px;
+    height: 50px;
+    background-color: lightblue;
+    text-align: center;
+    line-height: 50px;
+    cursor: grab;
+    margin: 0 auto;
+  }
+   #timer {
+    font-size: 24px;
+    margin-top: 20px;
+    text-align: center;
+  }
   </style>
 </head>
 
@@ -298,6 +346,181 @@
     <a href="./ЛР 13-14/Задание_4.html">ЛР 13-14(Задание 4)</a>
     <a href="./ЛР 13-14/Задание_5.html">ЛР 13-14(Задание 5)</a>
     <a href="./ЛР 15/ЛР15з2.html">ЛР 15</a>
+    <a href="./ЛР 16/16.html">ЛР 16</a>
+<div>
+  <p>ЛР 17</p>
+  <!--Интерфейсные события-->
+  <!--Событие клавиатуры-->
+<button id="button">Введите слово "RELOAD"</button>
+
+<script>
+  const button = document.getElementById('button');
+  let inputBuffer = '';
+
+  button.onclick = function(event) {
+    if (event.altKey && event.shiftKey) {
+      alert('Ура!');
+    }
+  };
+
+  document.addEventListener('keydown', function(event) {
+    inputBuffer += event.key;
+
+    if (inputBuffer.length > 6) {
+      inputBuffer = inputBuffer.slice(-6); // Оставляем последние 6 символов
+    }
+
+    if (inputBuffer.toUpperCase() === 'RELOAD') {
+      alert('Страница перезагружается...');
+      location.reload();
+    }
+  });
+</script>
+<!--Событие указателя-->
+<div id="pointerArea">Наведи или коснись меня!</div>
+  <div id="log"></div>
+
+  <script>
+    const pointerArea = document.getElementById('pointerArea');
+    const log = document.getElementById('log');
+
+    function logEvent(event) {
+      log.innerHTML += `<p>Type: ${event.type}, Pointer Type: ${event.pointerType}, ID: ${event.pointerId}, X: ${event.clientX}, Y: ${event.clientY}</p>`;
+    }
+
+    pointerArea.addEventListener('pointerdown', (event) => {
+      logEvent(event);
+      pointerArea.style.backgroundColor = 'red';
+    });
+
+    pointerArea.addEventListener('pointerup', (event) => {
+      logEvent(event);
+      pointerArea.style.backgroundColor = 'lightcoral';
+    });
+
+    pointerArea.addEventListener('pointermove', (event) => {
+      logEvent(event);
+    });
+
+    pointerArea.addEventListener('pointerenter', (event) => {
+      logEvent(event);
+      pointerArea.style.backgroundColor = 'orange';
+    });
+
+    pointerArea.addEventListener('pointerleave', (event) => {
+      logEvent(event);
+      pointerArea.style.backgroundColor = 'lightcoral';
+    });
+
+    pointerArea.addEventListener('pointercancel', (event) => {
+      logEvent(event);
+      pointerArea.style.backgroundColor = 'lightcoral';
+    });
+  </script>
+  <!--Событие полосы прокрутки-->
+<div id="scrollableArea">
+    <div id="content">
+      Прокрутите меня! Здесь много контента, чтобы появилась полоса прокрутки.
+    </div>
+  </div>
+
+  <div id="log"></div>
+
+  <script>
+    const scrollableArea = document.getElementById('scrollableArea');
+    const log = document.getElementById('log');
+
+    scrollableArea.addEventListener('scroll', (event) => {
+      const scrollTop = scrollableArea.scrollTop;
+      const scrollHeight = scrollableArea.scrollHeight;
+      const clientHeight = scrollableArea.clientHeight;
+
+      log.innerHTML = `
+        Scroll Top: ${scrollTop}<br>
+        Scroll Height: ${scrollHeight}<br>
+        Client Height: ${clientHeight}
+      `;
+
+      // Дополнительно: пример с "докрутился до низа"
+      if (scrollTop + clientHeight >= scrollHeight - 5) { // -5 для небольшого допуска
+        log.innerHTML += "<br>Вы докрутили до низа!";
+      }
+
+      // Дополнительно: пример с "докрутился до верха"
+      if (scrollTop === 0) {
+        log.innerHTML += "<br>Вы в самом верху!";
+      }
+    });
+  </script>
+  <!--Событие Drag&Drop с таймером(2 в 1)-->
+  <h1>Drag & Drop с таймером</h1>
+
+<div id="drag-container">Drop here</div>
+<div id="draggable" draggable="true">Drag me</div>
+
+<div id="timer">Время: 0</div>
+
+<script>
+const dragContainer = document.getElementById('drag-container');
+const draggable = document.getElementById('draggable');
+const timerElement = document.getElementById('timer');
+
+let timerInterval;
+let seconds = 0;
+let isDragging = false;
+
+// Функция для запуска таймера
+function startTimer() {
+  timerInterval = setInterval(() => {
+    seconds++;
+    timerElement.textContent = `Время: ${seconds}`;
+  }, 1000);
+}
+
+// Функция для остановки таймера
+function stopTimer() {
+  clearInterval(timerInterval);
+}
+/// Events для `draggable` элемента
+draggable.addEventListener('dragstart', (event) => {
+  event.dataTransfer.setData('text/plain', 'draggable');
+  if (!isDragging) {
+    startTimer();
+    isDragging = true;
+  }
+
+});
+
+draggable.addEventListener('dragend', () => {
+  // Таймер продолжает работать, если пользователь отпустил элемент, не донеся его до контейнера
+  // Добавим логику остановки таймера в `dragover` и `drop` для `dragContainer`
+  //  isDragging = false; //  Не убираем это здесь, так как таймер может быть остановлен в другом месте
+});
+
+// Events для `dragContainer` элемента
+dragContainer.addEventListener('dragover', (event) => {
+  event.preventDefault(); // Необходимо для разрешения drop
+});
+
+dragContainer.addEventListener('drop', (event) => {
+  event.preventDefault();
+  const data = event.dataTransfer.getData('text/plain');
+  if (data === 'draggable') {
+    dragContainer.appendChild(draggable);
+    dragContainer.style.border = '2px solid green'; // Визуальная индикация
+    stopTimer();
+    isDragging = false;
+  }
+});
+
+dragContainer.addEventListener('dragleave', () => {
+  dragContainer.style.border = '2px dashed #aaa';
+});
+</script>
+  </div>
+  <div>
+    <p>ЛР 18 на страничке "Регистрация"</p>
+  </div>
   <!--Создаём подвал сайта-->
   <footer class="footer container">
     <div class="footer-top">
@@ -340,7 +563,7 @@
   <script src="./pages/JavaScript/registration.js"></script>
   <script src="./pages/JavaScript/slider.js"></script>
   <script src="./pages/JavaScript/152.js"></script>
+  <script src="./pages/JavaScript/16.js"></script>
 </body>
-
 
 </html>
