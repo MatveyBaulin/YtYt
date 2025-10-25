@@ -212,13 +212,13 @@ header {
 
 .slider-container {
   display: flex;
-  /* Плавный переход */
-  transition: transform 0.5s ease;
+  overflow: hidden;
+  width: 100%;
 }
 
 .slide {
-  min-width: 100%;
-  box-sizing: border-box;
+  flex: 0 0 100%;
+  transition: transform 0.5s ease;
 }
 
 .slide img {
@@ -820,4 +820,5 @@ header {
     flex-direction: column;
     align-items: center;
   }
+
 }
