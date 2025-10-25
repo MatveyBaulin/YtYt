@@ -115,7 +115,7 @@
 
     <section class="technologies-section">
       <img src="./pages/IMG/photo2.png" alt="Tech photo">
-      <div class="slider">
+      <div class="slider" id="slider">
         <div class="slider-container">
           <div class="slide">
             <img src="./pages/IMG/tech1.png" alt="Tech 1">
@@ -139,8 +139,6 @@
             <img src="./pages/IMG/tech7.png" alt="Tech 7">
           </div>
         </div>
-        <button class="slider-prev" aria-label="Предыдущий">‹</button>
-        <button class="slider-next" aria-label="Следующий">›</button>
       </div>
       <p class="tech-description">
         <b>Это необходимый минимум для современного backend-разработчика</b>
@@ -148,46 +146,46 @@
     </section>
 
     <!--Создаём раздел особенностей обучения с карточками-->
-    <section class="advantages-section">
+<section class="advantages-section">
       <h2>Обучение в YtYt - это удобно и результативно</h2>
       <div class="cards-grid">
-        <article class="card">
-          <img src="./pages/IMG/icon1.png" alt="Иконка" />
-          <h3>Огромное<br>количество практики</h3>
-          <p>Более 500 самостоятельных заданий и 20 полноценных больших проектов</p>
-        </article>
-        <article class="card">
-          <img src="./pages/IMG/icon2.png" alt="Иконка" />
-          <h3>Современные<br>методики обучения</h3>
-          <p>Спиральное обучение: погружаемся в материал постепенно, виток за витком</p>
-        </article>
-        <article class="card">
-          <img src="./pages/IMG/icon3.png" alt="Иконка" />
-          <h3>Простое и понятное изложение</h3>
-          <p>Вместо заумных терминов – примеры из реального мира</p>
-        </article>
-        <article class="card">
-          <img src="./pages/IMG/icon4.png" alt="Иконка" />
-          <h3>Гибкий график<br>занятий</h3>
-          <p>Учитесь в любое время в удобном для вас темпе</p>
-        </article>
-        <article class="card">
-          <img src="./pages/IMG/icon5.png" alt="Иконка" />
-          <h3>Прямая связь с опытными программистами</h3>
-          <p>Задавайте вопросы и отправляйте свой код на проверку</p>
-        </article>
-        <article class="card">
-          <img src="./pages/IMG/icon6.png" alt="Иконка" />
-          <h3>Оплата небольшими частями</h3>
-          <p>Платите только за тот материал, который сейчас изучаете, а не за весь курс сразу</p>
-        </article>
-        <article class="card">
-          <img src="./pages/IMG/icon7.png" alt="Иконка" />
-          <h3>Быстрый и лёгкий возврат</h3>
-          <p>Если передумаете учиться – вернем деньги за 3 рабочих дня</p>
-        </article>
-      </div>
-    </section>
+    <article class="card"> 
+      <img src="./pages/IMG/icon1.png" alt="Иконка" />
+      <h3>Огромное<br>количество практики</h3>
+      <p>Более 500 самостоятельных заданий и 20 полноценных больших проектов</p>
+    </article>
+    <article class="card"> 
+      <img src="./pages/IMG/icon2.png" alt="Иконка" />
+      <h3>Современные<br>методики обучения</h3>
+      <p>Спиральное обучение: погружаемся в материал постепенно, виток за витком</p>
+    </article> 
+    <article class="card"> 
+      <img src="./pages/IMG/icon3.png" alt="Иконка" />
+      <h3>Простое и понятное изложение</h3>
+      <p>Вместо заумных терминов – примеры из реального мира</p>
+    </article> 
+    <article class="card"> 
+      <img src="./pages/IMG/icon4.png" alt="Иконка" />
+      <h3>Гибкий график<br>занятий</h3>
+      <p>Учитесь в любое время в удобном для вас темпе</p> 
+    </article> 
+    <article class="card"> 
+      <img src="./pages/IMG/icon5.png" alt="Иконка" /> 
+      <h3>Прямая связь с опытными программистами</h3> 
+      <p>Задавайте вопросы и отправляйте свой код на проверку</p> 
+    </article> 
+    <article class="card"> 
+      <img src="./pages/IMG/icon6.png" alt="Иконка" /> 
+      <h3>Оплата небольшими частями</h3> 
+      <p>Платите только за тот материал, который сейчас изучаете, а не за весь курс сразу</p> 
+    </article> 
+    <article class="card"> 
+      <img src="./pages/IMG/icon7.png" alt="Иконка" /> 
+      <h3>Быстрый и лёгкий возврат</h3> 
+      <p>Если передумаете учиться – вернем деньги за 3 рабочих дня</p> 
+    </article> 
+  </div> 
+</section>
 
     <!--Создаём раздел с видео-->
     <h1 style="text-align: center;">Как происходит обучение на YtYt?</h1>
@@ -200,7 +198,7 @@
 
     <!--Создаём второй раздел с особенностями обучения с каруселью-->
     <section class="advantages">
-      <div class="carousel">
+      <div class="carousel" id="carousel">
         <div class="advantage">
           <p class="adv-num">01</p>
           <p class="p-adv-name"><b>Весь материал разбит на небольшие уроки</b></p>
@@ -268,53 +266,141 @@
       </div>
     </section>
     <!--Создаём таблицу стоимостей обучения-->
-    <section class="pricing-table">
-      <div class="table-header">
-        <p>Блок</p>
-        <p>Стоимость (₽)</p>
-        <p>Расчетное время обучения (мес.) *</p>
-      </div>
-      <div class="table-row">
-        <p>Введение в программирование</p>
-        <p>Бесплатно</p>
-        <p>0.5</p>
-      </div>
-      <div class="table-row">
-        <p>Основы программирования на Python</p>
-        <p>9 900</p>
-        <p>1</p>
-      </div>
-      <div class="table-row">
-        <p>Python, продвинутый уровень</p>
-        <p>14 900</p>
-        <p>2.5</p>
-      </div>
-      <div class="table-row">
-        <p>Сети + фреймворк Flask</p>
-        <p>14 900</p>
-        <p>2.5</p>
-      </div>
-      <div class="table-row">
-        <p>Базы данных</p>
-        <p>14 900</p>
-        <p>2</p>
-      </div>
-      <div class="table-row">
-        <p>Фреймворк Django</p>
-        <p>14 900</p>
-        <p>2</p>
-      </div>
-      <div class="table-row">
-        <p>Разработка "боевого" проекта</p>
-        <p>9 900</p>
-        <p>1.5</p>
-      </div>
-      <div class="total-row">
-        <p><b>Итого</b></p>
-        <p><b>79 400</b></p>
-        <p><b>12</b></p>
-      </div>
-    </section>
+    <section id="pricing-table" class="pricing-table">
+    <div class="table-header">
+      <p>Блок</p>
+      <p>Стоимость (₽)</p>
+      <p>Расчетное время обучения (мес.) *</p>
+      <p>Действие</p>
+    </div>
+    <div id="table-body">
+      <!--  Строки таблицы будут добавлены сюда JS -->
+    </div>
+    <div class="total-row" id="total-row">
+      <!-- Итоговая строка будет добавлена сюда JS -->
+    </div>
+  </section>
+
+  <h2>Корзина:</h2>
+  <ul id="wishlist">
+    <!-- Элементы корзины будут добавлены сюда JS -->
+  </ul>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tableBody = document.getElementById('table-body');
+      const totalRow = document.getElementById('total-row');
+      const wishlistElement = document.getElementById('wishlist');
+
+      let data = [];
+      let wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+
+      async function loadData() {
+        // Пример встроенных данных (без data.json файла)
+        data = [
+          { "name": "Введение в программирование", "price": 0, "duration": 0.5 },
+          { "name": "Основы программирования на Python", "price": 9900, "duration": 1 },
+          { "name": "Python, продвинутый уровень", "price": 14900, "duration": 2.5 },
+          { "name": "Сети + фреймворк Flask", "price": 14900, "duration": 2.5 },
+          { "name": "Базы данных", "price": 14900, "duration": 2 },
+          { "name": "Фреймворк Django", "price": 14900, "duration": 2 },
+          { "name": "Разработка \"боевого\" проекта", "price": 9900, "duration": 1.5 }
+        ];
+        renderTable();
+        renderWishlist();
+      }
+
+      // Функция для отображения таблицы на основе данных из JSON
+      function renderTable() {
+        tableBody.innerHTML = '';
+
+        let totalPrice = 0;
+        let totalDuration = 0;
+
+        data.forEach(item => {
+          const row = document.createElement('div');
+          row.style.display = 'grid';
+          row.style.gridTemplateColumns = 'repeat(4, 1fr)';
+          row.style.padding = '10px';
+          row.style.borderBottom = '1px solid #ddd';
+
+          row.innerHTML = `
+            <p>${item.name}</p>
+            <p>${item.price}</p>
+            <p>${item.duration}</p>
+          `;
+
+          const addButton = document.createElement('button');
+          addButton.textContent = 'Добавить';
+          addButton.style.backgroundColor = '#4CAF50';
+          addButton.style.color = 'white';
+          addButton.style.padding = '5px 10px';
+          addButton.style.border = 'none';
+          addButton.style.cursor = 'pointer';
+          addButton.addEventListener('click', () => addToWishlist(item));
+
+          row.appendChild(addButton);
+          tableBody.appendChild(row);
+
+          totalPrice += item.price;
+          totalDuration += item.duration;
+        });
+
+        totalRow.innerHTML = `
+          <p><b>Итого</b></p>
+          <p><b>${totalPrice}</b></p>
+          <p><b>${totalDuration}</b></p>
+        `;
+        totalRow.style.fontWeight = 'bold';
+        totalRow.style.textAlign = 'right';
+        totalRow.style.padding = '10px';
+
+      }
+
+      // Функция добавления в корзину
+      function addToWishlist(item) {
+        if (!wishlist.find(wishlistItem => wishlistItem.name === item.name)) {
+          wishlist.push(item);
+          localStorage.setItem('wishlist', JSON.stringify(wishlist));
+          renderWishlist();
+        }
+      }
+
+      // Функция отображения корзины
+      function renderWishlist() {
+        wishlistElement.innerHTML = '';
+
+        wishlist.forEach(item => {
+          const listItem = document.createElement('li');
+          listItem.textContent = `${item.name} (${item.price} ₽)`;
+          listItem.style.marginBottom = '5px';
+
+          const removeButton = document.createElement('button');
+          removeButton.textContent = 'Удалить';
+          removeButton.style.backgroundColor = '#f44336';
+          removeButton.style.color = 'white';
+          removeButton.style.padding = '5px 10px';
+          removeButton.style.border = 'none';
+          removeButton.style.cursor = 'pointer';
+          removeButton.addEventListener('click', () => removeFromWishlist(item));
+          listItem.appendChild(removeButton);
+
+          wishlistElement.appendChild(listItem);
+          wishlistElement.style.listStyleType = 'none';
+          wishlistElement.style.padding = '0';
+        });
+      }
+
+      // Функция удаления из корзины
+      function removeFromWishlist(item) {
+        wishlist = wishlist.filter(wishlistItem => wishlistItem.name !== item.name);
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+        renderWishlist();
+      }
+
+      loadData();
+    });
+  </script>
 
     <p>* если занятиям уделяется около 20 часов в неделю</p>
     <!--Создаём блок предупреждения-->
@@ -351,6 +437,7 @@
   <p>ЛР 17</p>
   <!--Интерфейсные события-->
   <!--Событие клавиатуры-->
+<p>Событие клавиатуры</p>
 <button id="button">Введите слово "RELOAD"</button>
 
 <script>
@@ -376,150 +463,19 @@
     }
   });
 </script>
-<!--Событие указателя-->
-<div id="pointerArea">Наведи или коснись меня!</div>
-  <div id="log"></div>
-
-  <script>
-    const pointerArea = document.getElementById('pointerArea');
-    const log = document.getElementById('log');
-
-    function logEvent(event) {
-      log.innerHTML += `<p>Type: ${event.type}, Pointer Type: ${event.pointerType}, ID: ${event.pointerId}, X: ${event.clientX}, Y: ${event.clientY}</p>`;
-    }
-
-    pointerArea.addEventListener('pointerdown', (event) => {
-      logEvent(event);
-      pointerArea.style.backgroundColor = 'red';
-    });
-
-    pointerArea.addEventListener('pointerup', (event) => {
-      logEvent(event);
-      pointerArea.style.backgroundColor = 'lightcoral';
-    });
-
-    pointerArea.addEventListener('pointermove', (event) => {
-      logEvent(event);
-    });
-
-    pointerArea.addEventListener('pointerenter', (event) => {
-      logEvent(event);
-      pointerArea.style.backgroundColor = 'orange';
-    });
-
-    pointerArea.addEventListener('pointerleave', (event) => {
-      logEvent(event);
-      pointerArea.style.backgroundColor = 'lightcoral';
-    });
-
-    pointerArea.addEventListener('pointercancel', (event) => {
-      logEvent(event);
-      pointerArea.style.backgroundColor = 'lightcoral';
-    });
-  </script>
-  <!--Событие полосы прокрутки-->
-<div id="scrollableArea">
-    <div id="content">
-      Прокрутите меня! Здесь много контента, чтобы появилась полоса прокрутки.
-    </div>
-  </div>
-
-  <div id="log"></div>
-
-  <script>
-    const scrollableArea = document.getElementById('scrollableArea');
-    const log = document.getElementById('log');
-
-    scrollableArea.addEventListener('scroll', (event) => {
-      const scrollTop = scrollableArea.scrollTop;
-      const scrollHeight = scrollableArea.scrollHeight;
-      const clientHeight = scrollableArea.clientHeight;
-
-      log.innerHTML = `
-        Scroll Top: ${scrollTop}<br>
-        Scroll Height: ${scrollHeight}<br>
-        Client Height: ${clientHeight}
-      `;
-
-      // Дополнительно: пример с "докрутился до низа"
-      if (scrollTop + clientHeight >= scrollHeight - 5) { // -5 для небольшого допуска
-        log.innerHTML += "<br>Вы докрутили до низа!";
-      }
-
-      // Дополнительно: пример с "докрутился до верха"
-      if (scrollTop === 0) {
-        log.innerHTML += "<br>Вы в самом верху!";
-      }
-    });
-  </script>
-  <!--Событие Drag&Drop с таймером(2 в 1)-->
-  <h1>Drag & Drop с таймером</h1>
-
-<div id="drag-container">Drop here</div>
-<div id="draggable" draggable="true">Drag me</div>
-
-<div id="timer">Время: 0</div>
-
-<script>
-const dragContainer = document.getElementById('drag-container');
-const draggable = document.getElementById('draggable');
-const timerElement = document.getElementById('timer');
-
-let timerInterval;
-let seconds = 0;
-let isDragging = false;
-
-// Функция для запуска таймера
-function startTimer() {
-  timerInterval = setInterval(() => {
-    seconds++;
-    timerElement.textContent = `Время: ${seconds}`;
-  }, 1000);
-}
-
-// Функция для остановки таймера
-function stopTimer() {
-  clearInterval(timerInterval);
-}
-/// Events для `draggable` элемента
-draggable.addEventListener('dragstart', (event) => {
-  event.dataTransfer.setData('text/plain', 'draggable');
-  if (!isDragging) {
-    startTimer();
-    isDragging = true;
-  }
-
-});
-
-draggable.addEventListener('dragend', () => {
-  // Таймер продолжает работать, если пользователь отпустил элемент, не донеся его до контейнера
-  // Добавим логику остановки таймера в `dragover` и `drop` для `dragContainer`
-  //  isDragging = false; //  Не убираем это здесь, так как таймер может быть остановлен в другом месте
-});
-
-// Events для `dragContainer` элемента
-dragContainer.addEventListener('dragover', (event) => {
-  event.preventDefault(); // Необходимо для разрешения drop
-});
-
-dragContainer.addEventListener('drop', (event) => {
-  event.preventDefault();
-  const data = event.dataTransfer.getData('text/plain');
-  if (data === 'draggable') {
-    dragContainer.appendChild(draggable);
-    dragContainer.style.border = '2px solid green'; // Визуальная индикация
-    stopTimer();
-    isDragging = false;
-  }
-});
-
-dragContainer.addEventListener('dragleave', () => {
-  dragContainer.style.border = '2px dashed #aaa';
-});
-</script>
+<p>События слайдера и колеса прокрутки указаны в следующих разделах:</p>
+<a href="#slider">Колесо прокрутки</a>
+<a href="#carousel">Слайдер</a>
   </div>
   <div>
-    <p>ЛР 18 на страничке "Регистрация"</p>
+    <p>ЛР 18</p>
+    <p>Проверка валидации осуществлена на странице "Регистрация"</p>
+  </div>
+  <div>
+    <p>ЛР 19-20</p>
+    <p>Cookies и Local Storage взаимодействованы на странице "Регистрация". JSON взаимодействован в следующем разделе:</p>
+    <a href="#pricing-table">Стоимость обучения</a>
+    <p><b>! Примечание: в корзину можно добавить определённый товар единожды !</b></p>
   </div>
   <!--Создаём подвал сайта-->
   <footer class="footer container">
