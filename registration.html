@@ -21,7 +21,6 @@
             margin-bottom: 5px;
         }
 
-        input[type="text"],
         input[type="email"],
         input[type="password"],
         select {
@@ -40,6 +39,13 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.8em;
+            margin-top: -5px;
+            margin-bottom: 5px;
         }
     </style>
 </head>
@@ -60,16 +66,19 @@
             <label for="username">Имя пользователя:</label>
             <input type="text" id="username" name="username" required minlength="3" maxlength="15"
                 pattern="^[a-zA-Z0-9_]+$" title="От 3 до 15 символов: латинские буквы, цифры, символ '_'">
+            <div class="error" id="username-error"></div>
 
             <!-- Email: тип = email, браузер проверит «@» и домен -->
             <label for="email">Электронная почта:</label>
             <input type="email" id="email" name="email" required placeholder="name@example.com">
+            <div class="error" id="email-error"></div>
 
             <!-- Пароль: минимум 8 символов, минимум одна цифра и одна буква -->
             <label for="password">Пароль:</label>
             <input type="password" id="password" name="password" required minlength="8"
                 pattern="(?=.*[0-9])(?=.*[a-zA-Z]).{8,}"
                 title="Не менее 8 символов, минимум одна цифра и одна буква">
+            <div class="error" id="password-error"></div>
 
             <!-- Пол -->
             <fieldset>
@@ -80,11 +89,12 @@
                 <input type="radio" id="female" name="gender" value="female">
                 <label for="female">Женский</label>
             </fieldset>
+            <div class="error" id="gender-error"></div>
 
             <!-- Навыки – пользователь может выбрать минимум один -->
             <fieldset>
                 <legend>Навыки (выберите хотя бы один)</legend>
-                <input type="checkbox" id="skill-html" name="skills" value="HTML" required>
+                <input type="checkbox" id="skill-html" name="skills" value="HTML">
                 <label for="skill-html">HTML</label>
 
                 <input type="checkbox" id="skill-css" name="skills" value="CSS">
@@ -93,6 +103,7 @@
                 <input type="checkbox" id="skill-js" name="skills" value="JavaScript">
                 <label for="skill-js">JavaScript</label>
             </fieldset>
+            <div class="error" id="skills-error"></div>
 
             <!-- Страна -->
             <label for="country">Страна:</label>
@@ -103,10 +114,16 @@
                 <option value="canada">Канада</option>
                 <option value="uk">Великобритания</option>
             </select>
+            <div class="error" id="country-error"></div>
 
             <button type="submit">Отправить</button>
         </form>
+        <button id="get-cookies">Получить Cookie</button>
+        <button id="clear-cookies">Очистить Cookie</button>
+        <button id="get-local-storage">Получить Local Storage</button>
+        <button id="clear-local-storage">Очистить Local Storage</button>
     </main>
     <script src="./pages/JavaScript/registration.js"></script>
 </body>
+
 </html>
