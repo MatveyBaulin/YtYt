@@ -1,31 +1,24 @@
-// Создание слайдера
 document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".slide");
-  const prevButton = document.querySelector(".slider-prev");
-  const nextButton = document.querySelector(".slider-next");
+  const container = document.querySelector(".slider-container");
   let currentIndex = 0;
 
   function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.remove("active");
-      if (i === index) {
-        slide.classList.add("active");
-      }
-    });
-    const slideWidth = slides[currentIndex].clientWidth;
-    const offset = -currentIndex * slideWidth;
-    document.querySelector(".slider-container").style.transform = `translateX(${offset}px)`;
+    const offset = -index * 100; // в процентах
+    container.style.transform = `translateX(${offset}%)`;
   }
 
-  prevButton.addEventListener("click", function () {
-    currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+  document.querySelector('.slider').addEventListener('wheel', (event) => {
+    event.preventDefault();
+    if (event.deltaY > 0) {
+      // прокрутка вниз — следующий слайд
+      currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+    } else {
+      // прокрутка вверх — предыдущий слайд
+      currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+    }
     showSlide(currentIndex);
-  });
+  }, { passive: false });
 
-  nextButton.addEventListener("click", function () {
-    currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
-    showSlide(currentIndex);
-  });
-
-  showSlide(currentIndex); // Показать первый слайд при загрузке
+  showSlide(currentIndex); // показываем первый слайд при загрузке
 });
